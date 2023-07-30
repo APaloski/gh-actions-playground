@@ -27,7 +27,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Generate a report... of sorts
-        run: mkdir -p reports/kover && cd reports/kover && echo "Hello, world!" > out.txt && cd .. && echo "Also hello" > out2.txt
+        run: mkdir -p reports/kover && cd reports/kover && echo "Hello, world!" > out.txt
+        
+      - name: Write report 2
+        run: cd .. && echo "Also hello" > out2.txt
         
       - name: Upload math result for job 2
         uses: actions/upload-artifact@v3
