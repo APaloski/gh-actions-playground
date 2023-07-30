@@ -27,13 +27,13 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Generate a report... of sorts
-        run: mkdir -p reports/kover && cd reports/kover && echo "Hello, world!" > out.txt
+        run: mkdir -p reports/kover && echo "Hello, world!" > reports/kover/out.txt
         
       - name: Write report 2
-        run: cd .. && echo "Also hello" > out2.txt
+        run: mkdir reports/kover/report1 && echo "Also hello" > reports/kover/report1/out2.txt
         
       - name: Upload math result for job 2
         uses: actions/upload-artifact@v3
         with:
           name: coverage_report
-          path: reports/kover/**/*
+          path: reports/kover
